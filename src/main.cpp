@@ -3,18 +3,10 @@
 
 int main()
 {
-    std::cout << "\n I'm working!" << std::endl;
+    std::cout << "\n I'm working!" << std::endl; // test line
 
-    games myGame;
-    std::string chosenGame;
-
-    std::cout << "Enter the game title: ";
-    std::getline(std::cin, chosenGame);
-
-    myGame.setTitle(chosenGame); std::cout<< std::endl;
-    std::cout << "You entered: " << myGame.getTitle();
-
-    std::vector<games> gameCollection;
+    games myGame; // game obj to hold info on a game
+    std::vector<games> gameCollection; // hold a collection of games objects
 
     return 0;
 }
