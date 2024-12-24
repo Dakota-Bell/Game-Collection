@@ -6,28 +6,31 @@
 #ifndef GAMES_H
 #define GAMES_H
 
-
-#include <vector>
 #include <string>
 
 class games
 {
     public:
+        friend std::ostream& operator<<(std::ostream&, const games&);
+        friend bool operator==(const games&, const std::string&);
+    // Needs to be a friend so that it can access private members of the class
+
         void setTitle(std::string);
         void setReleaseDate(std::string);
         void setPrice(double);
         void setRating(char);
 
-        std::string getTitle();
-        std::string getReleaseDate();
-        double getPrice();
-        char getRating();
+    // const prevents the object from being modified when calling these methods
+        std::string getTitle()const;
+        std::string getReleaseDate()const;
+        double getPrice()const;
+        char getRating()const;
 
     private:
         std::string title;
         std::string releaseDate;
         double price;
-        char rating;
+        char rating; //ESRB Rating
 
 };
 

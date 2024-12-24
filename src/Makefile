@@ -2,7 +2,7 @@
 
 PROG=app
 PORT=8090
-SRCS=main.cpp games.h games.cpp
+SRCS=main.cpp games.h games.cpp gameCollection.cpp
 
 OBJS=${SRCS:S/cpp$/o/g}
 
@@ -20,6 +20,7 @@ ${PROG}: ${OBJS}
 
 # model
 games.o: model/games.cpp model/games.h
+gameCollection.o: model/gameCollection.h model/gameCollection.cpp
 
 # views
 
