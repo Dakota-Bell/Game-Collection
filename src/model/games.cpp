@@ -1,6 +1,6 @@
 #include "games.h"
 
-std::ostream& operator<<(std::ostream& os, const games& rhs)
+std::ostream& operator<<(std::ostream& os, const games& rhs) // used to help with the displayGames() method in gameCollection.cpp
 {
     os<<"Title: "<<rhs.getTitle()<<std::endl;
     os<<"Release Date: "<<rhs.getReleaseDate()<<std::endl;

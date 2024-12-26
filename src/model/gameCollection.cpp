@@ -3,7 +3,7 @@
 void GameCollection::addGame()
 {
     games myObj;
-    std::string n; double p; char r;
+    std::string n; double p; char r; std::cin.ignore();
     std::cout<<"Enter the title: "; getline(std::cin, n); myObj.setTitle(n); n = " ";
     std::cout<<"Enter release date (MM/DD/YYYY): "; getline(std::cin, n); myObj.setReleaseDate(n);
     std::cout<<"Enter the price of the game: $"; std::cin>>p; myObj.setPrice(p);
@@ -13,9 +13,9 @@ void GameCollection::addGame()
 
 void GameCollection::displayGames()
 {
-    std::cout<<"Info about your game"<<std::endl;
+    std::cout<<"Info about your games"<<std::endl<<std::endl;
     for(int i = 0; i < gameCollection.size(); i++)
-    { 
+    {
         std::cout<<gameCollection[i]<<std::endl;
     }
 }

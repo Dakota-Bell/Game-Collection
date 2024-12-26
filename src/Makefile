@@ -7,9 +7,9 @@ SRCS=main.cpp games.h games.cpp gameCollection.cpp
 OBJS=${SRCS:S/cpp$/o/g}
 
 CXXFLAGS=-Wall -std=c++17
-CXXFLAGS+=-I/usr/local/include -I${.CURDIR}/model -I${.CURDIR}/view
-LDFLAGS=-L/usr/local/lib
-LDFLAGS+=-lwthttp -lwt
+CXXFLAGS+=-I/usr/include -I${.CURDIR}/model -I${.CURDIR}
+LDFLAGS=-L/usr/lib
+
 
 .PHONY: all clean start stop
 
