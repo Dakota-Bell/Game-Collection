@@ -2,10 +2,10 @@
 
 std::ostream& operator<<(std::ostream& os, const games& rhs) // used to help with the displayGames() method in gameCollection.cpp
 {
-    os<<"Title: "<<rhs.getTitle()<<std::endl;
-    os<<"Release Date: "<<rhs.getReleaseDate()<<std::endl;
-    os<<"Price: $"<<rhs.getPrice()<<std::endl;
-    os<<"ESRB Rating: "<<rhs.getRating()<<std::endl;
+    os<<"Title: "<<rhs.getTitle()<<std::endl
+    <<"Release Date: "<<rhs.getReleaseDate()<<std::endl
+    <<"Price: $"<<rhs.getPrice()<<std::endl
+    <<"ESRB Rating: "<<rhs.getRating()<<std::endl;
     return os;
 }
 
