@@ -11,7 +11,7 @@ void GameCollection::addGame()
     std::cout<<"Enter ESRB rating: "; std::cin>>r; myObj.setRating(r);
     gameCollection.push_back(myObj);
     outfile << myObj << std::endl;
-}
+}//end addGame
 
 void GameCollection::displayGames()
 {
@@ -20,15 +20,15 @@ void GameCollection::displayGames()
     {
         std::cout<<gameCollection[i]<<std::endl;
     }
-}
+}//end displayGames
 
 void GameCollection::removeGame(std::string str)
 {
     //Iterator set equal to the title of the game to be removed from the list
-    auto it = std::find(gameCollection.begin(), gameCollection.end(), [&str](const games& game)
-	{return game.getTitle() == str; });
+    auto it = std::find(gameCollection.begin(), gameCollection.end(), str);
+
     std::ofstream outfile("gameInfo.txt");
-    
+
 
     if(it != gameCollection.end())// goes through the list until it finds game title
     {
@@ -36,17 +36,10 @@ void GameCollection::removeGame(std::string str)
 	if(outfile.is_open()) /* if you're at the string of the game, delete the info about the game
 				      which includes the attributes from games.h */
 	{
-	    for(const &game : gameCollection)
-	    {
-		outfile<<game<<std::endl;
-	    }
-	    outfile.close();
-	    std::cout<<"Game "<<str<<" has been removed."<<std::endl;
+	    std::cout<<"File is open"<<std::endl;
 	}
-	std::cerr<<"Error opening file to update."<<std::endl;
     }
     else
-	std::cout<<"Game with title "<<str<<" has been removed."<<std::endl;
-
+	std::cout<<"Game with title "<<str<<" has been removed"<<std::endl;
     outfile.close();
-}
+}//end removeGame

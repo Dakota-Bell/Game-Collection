@@ -33,6 +33,7 @@ int main()
 		    myCollection.removeGame(rmGame);
 		    break;
 		case 4:
+		    return choice;
 		    break;
 	        default:
 		    std::cout<<"Invalid Entry"<<std::endl;
