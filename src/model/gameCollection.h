@@ -10,8 +10,8 @@
 
 class GameCollection
 {
-    private:
-        std::vector<games> gameCollection; // hold a collection of games objects
+    private:// hold a collection of games objects
+        std::vector<games> gameCollection;
 
     public:
         void addGame();

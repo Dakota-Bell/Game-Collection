@@ -7,7 +7,6 @@ void menu();
 // DRIVER
 int main()
 {
-    std::cout << "\n I'm working!" << std::endl; // test line
     int choice;
     std::string rmGame;
 
@@ -21,24 +20,24 @@ int main()
 	std::cin.ignore();
 	    switch(choice)
 	    {
-	        case 1:
-	            myCollection.addGame(); std::cout<<std::endl;
-		    break;
-	        case 2:
-		    myCollection.displayGames(); std::cout<<std::endl;
-		    break;
-	        case 3:
-		    std::cout<<::std::endl<<"Enter the name of the game you want to remove from your collection: ";
-		    std::getline(std::cin, rmGame); std::cin.ignore();
-		    myCollection.removeGame(rmGame);
-		    break;
-		case 4:
-		    return choice;
-		    break;
-	        default:
-		    std::cout<<"Invalid Entry"<<std::endl;
-		    std::cin>>choice; std::cin.ignore();
-		    break;
+			case 1:
+				myCollection.addGame(); std::cout<<std::endl;
+				break;
+			case 2:
+				myCollection.displayGames(); std::cout<<std::endl;
+				break;
+			case 3:
+				std::cout<<::std::endl<<"Enter the name of the game you want to remove from your collection: ";
+				std::getline(std::cin, rmGame);
+				myCollection.removeGame(rmGame);
+				break;
+			case 4:
+				return choice;
+				break;
+			default:
+				std::cout<<"Invalid Entry"<<std::endl;
+				std::cin>>choice; std::cin.ignore();
+				break;
 	    };
     }
 

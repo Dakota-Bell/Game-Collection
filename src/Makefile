@@ -1,36 +1,18 @@
-#Dakota Bell, 12/21/2024
+#Warnings all for code globally
+CXX=g++
+CFLAGS=-Wall -g
 
-PROG=app
-PORT=8090
-SRCS=main.cpp games.h games.cpp gameCollection.cpp
+.PHONY: clean all
 
-OBJS=${SRCS:S/cpp$/o/g}
+all: main games gameCollection
 
-CXXFLAGS=-Wall -std=c++17
-CXXFLAGS+=-I/usr/include -I${.CURDIR}/model -I${.CURDIR}
-LDFLAGS=-L/usr/lib
+main: main.cpp
+	${CXX} ${CFLAGS} -o $@ main.cpp
 
+games: model/games.cpp
+	${CXX} ${CFLAGS} -o $@ model/games.h
+gameCollection:  model/gameCollection.cpp
+	${CXX} ${CFLAGS} -o $@ model/gameCollection.h
 
-.PHONY: all clean start stop
-
-all: ${PROG}
-
-${PROG}: ${OBJS}
-	${CXX} ${CXXFLAGS} -o $@ ${OBJS} ${LDFLAGS}
-
-# model
-games.o: model/games.cpp model/games.h
-gameCollection.o: model/gameCollection.h model/gameCollection.cpp
-
-# views
-
-
-# utilities
-clean:
-	@rm -f ${PROG} ${OBJS} *.core
-
-start: ${PROG}
-	./${PROG} --docroot ../ --http-address 0.0.0.0 --http-port ${PORT} &
-
-stop:
-	@pkill ${PROG}
+clean: 
+	@rm -f main *.core *.cpp~

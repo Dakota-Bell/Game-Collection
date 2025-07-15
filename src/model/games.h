@@ -7,6 +7,7 @@
 #define GAMES_H
 
 #include <string>
+#include <ostream>
 
 class games
 {
