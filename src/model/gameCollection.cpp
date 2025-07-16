@@ -16,8 +16,10 @@ void GameCollection::addGame()
 
 void GameCollection::displayGames()
 {
+    int len = gameCollection.size();
+
     std::cout<<"Info about your games"<<std::endl<<std::endl;
-    for(long unsigned int i=0; i<gameCollection.size(); i++)
+    for(int i=0; i<len; i++)
     {
         std::cout<<gameCollection[i]<<std::endl;
     }
@@ -28,19 +30,10 @@ void GameCollection::removeGame(std::string str)
     //Iterator set equal to the title of the game to be removed from the list
     auto it = std::find(gameCollection.begin(), gameCollection.end(), str);
 
-    std::ofstream outfile("gameInfo.txt");
 
-
-    if(it != gameCollection.end())// goes through the list until it finds game title
-    {
+    if(it != gameCollection.end()){// goes through the list until it finds game title
         gameCollection.erase(it); // removes game object from the gameCollection vector object
-        if(outfile.is_open()) /* if you're at the string of the game, delete the info about the game
-                        which includes the attributes from games.h */
-        {
-            std::cout<<"File is open"<<std::endl;
-        }
     }
-    else
-	std::cout<<"Game with title "<<str<<" has been removed"<<std::endl;
-    outfile.close();
+
+    std::cout<<"Game with title "<<str<<" has been removed"<<std::endl;
 }//end removeGame

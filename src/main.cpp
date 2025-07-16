@@ -36,7 +36,6 @@ int main()
 				break;
 			default:
 				std::cout<<"Invalid Entry"<<std::endl;
-				std::cin>>choice; std::cin.ignore();
 				break;
 	    };
     }
